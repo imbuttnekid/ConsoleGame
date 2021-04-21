@@ -15,15 +15,33 @@ namespace ConsoleGame
 
         //Encounters
         public static void firstEncounter()
-            {
+        {
             Console.WriteLine("You throw open the door and grab a rusty metal sword while charging toward your captor");
             Console.WriteLine("He turns...");
             Console.ReadKey();
-            Combat(false, "Human Rogue", 1, 4);
-            }
+            Combat(false, "Human Rogue", 1, 1);
+        }
+        public static void BasicFightEncounter()
+        {
+            Console.WriteLine("You turn the corner and there you see a hulking beast...");
+            Console.ReadKey();
+            Combat(true,"",0.0);
+
+        
+        }
 
 
         //Encounter Tools
+        public static void RandomEncounter()
+        {
+            switch(rand.Next(0,1))
+            {
+                case 0:
+                    BasicFightEncounter();
+                    break;
+           }
+        }
+
         public static void Combat(bool random, string name, int power, int health)
         {
             string n = "";
@@ -31,7 +49,9 @@ namespace ConsoleGame
             int h = 0;
             if (random)
             {
-
+                n = GetName();
+                p = rand.Next(1, 5);
+                h = rand.Next(1, 8);
             }
             else 
             {
@@ -54,7 +74,7 @@ namespace ConsoleGame
                 if(input.ToLower() == "a"||input.ToLower() == "attack")
                 {
                     //ATTACK
-                    Console.WriteLine("You move dexterously towards the enemy swinging your weapon. The"+n+"Jumps quickly to the side, while striking you in the process.");
+                    Console.WriteLine("You move dexterously towards the enemy swinging your weapon. The "+n+" jumps quickly to the side, while striking you in the process.");
                     int damage = p - Program.currentPlayer.armorValue;
                     if (damage < 0)
                         damage = 0;
@@ -109,12 +129,35 @@ namespace ConsoleGame
                         int potionV = 5;
                         Console.WriteLine("You gain "+potionV+" health");
                         Program.currentPlayer.health += potionV;
-                         
+                        Console.WriteLine("As you were occupied the " + n + "advanced, stiking you");
+                        int damage = (p / 2) - Program.currentPlayer.armorValue;
+                        if (damage < 0)
+                            damage = 0;
+                        Console.WriteLine("You lose " + damage + " health");
                     }
                     Console.ReadKey();
                 }
                 Console.ReadKey();
             }
+            int c = rand.Next(10, 50);
+            Console.WriteLine("As you stand victorious over the " + n + ", it's body dissolves into "+c+" gold coins");
+            Console.ReadKey();
+        }
+
+        public static string GetName()
+        {
+            switch(rand.Next(0, 4))
+            {
+                case 0:
+                    return "Skeleton";
+                case 1:
+                    return "Zombie";
+                case 2:
+                    return "Drow";
+                case 3:
+                    return "Grave Robber";
+            }
+            return "Human Fighter";
         }
     }
 }
