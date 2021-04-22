@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    class Encounters
+    public class Encounters
     {
         static Random rand = new Random();
 
@@ -23,11 +23,21 @@ namespace ConsoleGame
         }
         public static void BasicFightEncounter()
         {
+            Console.Clear();
             Console.WriteLine("You turn the corner and there you see a hulking beast...");
             Console.ReadKey();
-            Combat(true,"",0.0);
+            Combat(true,"",0,0);
 
         
+        }
+        public static void WizardEncounter()
+        {
+            Console.Clear();
+            Console.WriteLine("A door opens up before you and you walk into a poorly lit room. You see a tall slender man with a long beard standing before you.");
+            Console.ReadKey();
+            Combat(false, "Wizard", 4, 2);
+
+
         }
 
 
@@ -38,6 +48,9 @@ namespace ConsoleGame
             {
                 case 0:
                     BasicFightEncounter();
+                    break;
+                case 1:
+                    WizardEncounter();
                     break;
            }
         }
@@ -50,8 +63,8 @@ namespace ConsoleGame
             if (random)
             {
                 n = GetName();
-                p = rand.Next(1, 5);
-                h = rand.Next(1, 8);
+                p = Program.currentPlayer.GetPower();
+                h = Program.currentPlayer.GetHealth();
             }
             else 
             {
@@ -96,6 +109,7 @@ namespace ConsoleGame
                 }
                 else if (input.ToLower() == "r" || input.ToLower() == "run")
                 {
+                    //RUN
                     if(rand.Next(0, 2) == 0)
                     {
                         Console.WriteLine("As you sprint away from the " + n + ", its strike catches you on the back sending you sprawling on the ground");
@@ -110,10 +124,10 @@ namespace ConsoleGame
                     {
                         Console.WriteLine("You use your crazy ninja skills to juke the " + n + " and successfully escape!");
                         Console.ReadKey();
+                        Shop.LoadShop(Program.currentPlayer);
                     }
                 }
                 else if (input.ToLower() == "h" || input.ToLower() == "heal")
-                {
                     //HEAL
                     if (Program.currentPlayer.potion == 0)
                     {
@@ -136,11 +150,19 @@ namespace ConsoleGame
                         Console.WriteLine("You lose " + damage + " health");
                     }
                     Console.ReadKey();
-                }
-                Console.ReadKey();
+                    if(Program.currentPlayer.health <= 0)
+                    {
+                        //Death Code
+                        Console.WriteLine("You fall and the last thing you see is the " + n + " stands menacingly over you. ");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadKey();
+                        System.Environment.Exit(0);
+                    }
+                    Console.ReadKey();
             }
-            int c = rand.Next(10, 50);
+            int c = Program.currentPlayer.GetCoins();
             Console.WriteLine("As you stand victorious over the " + n + ", it's body dissolves into "+c+" gold coins");
+            Program.currentPlayer.coins += c;
             Console.ReadKey();
         }
 
