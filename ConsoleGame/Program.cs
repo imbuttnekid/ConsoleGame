@@ -12,17 +12,6 @@ namespace ConsoleGame
         public static bool mainLoop = true;
         static void Main(string[] args)
         {
-            Start();
-            Encounters.firstEncounter();
-            while(mainLoop)
-            {
-                Encounters.RandomEncounter();
-            }
-
-        }
-
-        public static void Start()
-        {
             Console.WriteLine("ButtNekid's Bounce House");
             Console.WriteLine("Name:");
             currentPlayer.name = Console.ReadLine();
@@ -36,10 +25,12 @@ namespace ConsoleGame
             Console.Clear();
             Console.WriteLine("You grope around in the darkness until you find a door handle. You feel some resistance as");
             Console.WriteLine("you turn the handle, but the rusty lock breaks with little effort. You see your captor");
-            Console.WriteLine("standing with his back to you outside the door.");
+            Console.WriteLine("standing with his back to you outside the door.");            Encounters.firstEncounter();
+            while(mainLoop)
+            {
+                Encounters.RandomEncounter();
+            }
+
         }
-
-
-
     }
 }
