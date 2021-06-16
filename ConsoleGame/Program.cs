@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace ConsoleGame
 {
@@ -10,6 +11,15 @@ namespace ConsoleGame
             Console.Write("What's your name:");
 
             string name = Console.ReadLine();
+            Random random = new Random();
+            byte hp = (byte)random.Next(8, 20);
+            byte ac = (byte)random.Next(8, 20);
+            byte ap = (byte)random.Next(8, 20);
+
+            Player player = new Player(name, hp, ac, ap);
+            System.Console.WriteLine($"Starting Armor class:{player.ArmorClass}");
+            System.Console.WriteLine($"Starting Attack Points:{player.AttackPoints}");
+            System.Console.WriteLine($"Starting Hitpoints:{player.HitPoints}");
 
             Console.WriteLine($"You awake in a cold stone, dark room. You feel dazed and are having trouble remembering anything about your past.");
 
