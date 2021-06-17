@@ -16,8 +16,8 @@ namespace ConsoleGame
             int hp = random.Next(8, 20);
             int ac = random.Next(8, 20);
             int ap = random.Next(8, 20);
-
             Player player = new Player(name, hp, ac, ap);
+
             Console.WriteLine($"Starting Armor class:{player.ArmorClass}");
             Thread.Sleep(100);
             Console.WriteLine($"Starting Attack Points:{player.AttackPoints}");
@@ -47,6 +47,17 @@ He turns...");
 
             Enemy rogue = new Enemy("Human Rogue", 1, 1, 1);
             player.RunCombatLoopWith(rogue);
+
+            if (!player.isAlive)
+            {
+                Console.WriteLine($"You fall and the last thing you see is the {rogue.Name} stands menacingly over you.\nGAME OVER");
+            }
+            else
+            {
+                Console.WriteLine($"As you stand victorious over the {rogue.Name}, it's body dissolves into blah gold coins");
+            }
+
+            System.Environment.Exit(0);
         }
     }
 }

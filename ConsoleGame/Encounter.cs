@@ -18,20 +18,27 @@ namespace ConsoleGame
             {
                 switch (input)
                 {
-                    case "A": AttackEnemy(player, enemy); break;
+                    case "A":
+                        Console.WriteLine($"You move dexterously towards the enemy swinging your weapon. The {enemy.Name} jumps quickly to the side, while striking you in the process.");
+                        Thread.Sleep(100);
+                        AttackEnemy(player, enemy);
+                        input = ValidateInput(input);
+                        break;
                     case "D": break;
                     case "H": break;
                     case "R": break;
                 }
+
+                if (player.HitPoints <= 0 || enemy.HitPoints <= 0) return;
             }
         }
 
         private static void AttackEnemy(Player player, Enemy enemy)
         {
-            Console.WriteLine($"You move dexterously towards the enemy swinging your weapon. The {enemy.Name} jumps quickly to the side, while striking you in the process.");
+            Console.WriteLine($"You inflicted {player.AttackPoints} damage.\nYou received {enemy.HitPoints} damage.");
             Thread.Sleep(100);
-            
-            Console.WriteLine();
+            enemy.HitPoints -= player.AttackPoints;
+            player.HitPoints -= enemy.AttackPoints;
         }
 
         private static string ValidateInput(string input)
