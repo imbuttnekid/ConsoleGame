@@ -1,6 +1,6 @@
 namespace ConsoleGame
 {
-    public interface Stats
+    public abstract class Stats
     {
         public string Name { get; set; }
         public int HitPoints { get; set; }
