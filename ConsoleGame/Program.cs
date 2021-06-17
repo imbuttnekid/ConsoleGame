@@ -36,6 +36,8 @@ you turn the handle, but the rusty lock breaks with little effort. You see your 
 standing with his back to you outside the door.
 You throw open the door and grab a rusty metal sword while charging toward your captor
 He turns...");
+
+            Enemy rogue = new Enemy("Human Rogue", 1, 1, 1);
         }
     }
 }
