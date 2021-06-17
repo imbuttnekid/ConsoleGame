@@ -44,11 +44,9 @@ You throw open the door and grab a rusty metal sword while charging toward your 
 He turns...");
 
             Thread.Sleep(100);
-            Enemy rogue = new Enemy("Human Rogue", 1, 1, 1);
 
-            Console.WriteLine($"You encounter a {rogue.Name}");
-            Thread.Sleep(100);
-            Console.WriteLine("| (A)ttack (D)efend |\n| (R)un    (H)eal   |");
+            Enemy rogue = new Enemy("Human Rogue", 1, 1, 1);
+            player.Combat(rogue);
         }
     }
 }
