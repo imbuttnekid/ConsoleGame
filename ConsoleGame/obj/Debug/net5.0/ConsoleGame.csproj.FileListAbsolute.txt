@@ -1,0 +1,16 @@
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\bin\Debug\net5.0\ConsoleGame.exe
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\bin\Debug\net5.0\ConsoleGame.deps.json
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\bin\Debug\net5.0\ConsoleGame.runtimeconfig.json
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\bin\Debug\net5.0\ConsoleGame.runtimeconfig.dev.json
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\bin\Debug\net5.0\ConsoleGame.dll
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\bin\Debug\net5.0\ref\ConsoleGame.dll
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\bin\Debug\net5.0\ConsoleGame.pdb
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.csproj.AssemblyReference.cache
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.AssemblyInfoInputs.cache
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.AssemblyInfo.cs
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.csproj.CoreCompileInputs.cache
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.dll
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ref\ConsoleGame.dll
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.pdb
+C:\Users\scott\Desktop\ConsoleGame\ConsoleGame\obj\Debug\net5.0\ConsoleGame.genruntimeconfig.cache
