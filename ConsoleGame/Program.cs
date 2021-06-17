@@ -46,7 +46,7 @@ He turns...");
             Thread.Sleep(100);
 
             Enemy rogue = new Enemy("Human Rogue", 1, 1, 1);
-            player.Combat(rogue);
+            player.RunCombatLoopWith(rogue);
         }
     }
 }

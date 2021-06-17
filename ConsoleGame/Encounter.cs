@@ -5,7 +5,7 @@ namespace ConsoleGame
 {
     public static class Encounter
     {
-        public static void Combat(this Player player, Enemy enemy)
+        public static void RunCombatLoopWith(this Player player, Enemy enemy)
         {
             Console.WriteLine($"You encounter:{enemy.Name}");
             Thread.Sleep(100);
@@ -13,6 +13,11 @@ namespace ConsoleGame
             Thread.Sleep(100);
             string input = Console.ReadLine().ToUpper();
             input = ValidateInput(input);
+
+            while (player.isAlive && enemy.isAlive)
+            {
+
+            }
         }
 
         private static string ValidateInput(string input)
