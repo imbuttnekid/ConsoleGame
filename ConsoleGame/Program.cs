@@ -16,9 +16,8 @@ namespace ConsoleGame
             byte hp = (byte)random.Next(8, 20);
             byte ac = (byte)random.Next(8, 20);
             byte ap = (byte)random.Next(8, 20);
-            byte potions = (byte)random.Next(8, 20);
 
-            Player player = new Player(name, hp, ac, ap, potions);
+            Player player = new Player(name, hp, ac, ap);
             Console.WriteLine($"Starting Armor class:{player.ArmorClass}");
             Thread.Sleep(100);
             Console.WriteLine($"Starting Attack Points:{player.AttackPoints}");

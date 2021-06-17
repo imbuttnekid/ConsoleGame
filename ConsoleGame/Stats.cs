@@ -6,6 +6,5 @@ namespace ConsoleGame
         public int HitPoints { get; set; }
         public int ArmorClass { get; set; }
         public int AttackPoints { get; set; }
-        public int Potions { get; set; }
     }
 }
