@@ -19,7 +19,7 @@ namespace ConsoleGame
         {
             while (String.IsNullOrWhiteSpace(input) || input != "A" && input != "D" && input != "R" && input != "H")
             {
-                Console.Write("Sorry, didn't understand. (A)ttack(D)efend |\n | (R)un(H)eal |");
+                Console.Write("Sorry, didn't understand.\n| (A)ttack (D)efend |\n| (R)un    (H)eal   |");
                 input = Console.ReadLine().ToUpper();
             }
 
