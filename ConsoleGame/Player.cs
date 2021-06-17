@@ -1,6 +1,6 @@
 namespace ConsoleGame
 {
-	public class Player
+	public class Player : Stats
 	{
 		public string Name { get; set; }
 		public int HitPoints { get; set; }
