@@ -16,8 +16,22 @@ namespace ConsoleGame
 
             while (player.isAlive && enemy.isAlive)
             {
-
+                switch (input)
+                {
+                    case "A": AttackEnemy(player, enemy); break;
+                    case "D": break;
+                    case "H": break;
+                    case "R": break;
+                }
             }
+        }
+
+        private static void AttackEnemy(Player player, Enemy enemy)
+        {
+            Console.WriteLine($"You move dexterously towards the enemy swinging your weapon. The {enemy.Name} jumps quickly to the side, while striking you in the process.");
+            Thread.Sleep(100);
+            
+            Console.WriteLine();
         }
 
         private static string ValidateInput(string input)

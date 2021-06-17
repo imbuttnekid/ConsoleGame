@@ -13,9 +13,9 @@ namespace ConsoleGame
 
             string name = Console.ReadLine();
             Random random = new Random();
-            byte hp = (byte)random.Next(8, 20);
-            byte ac = (byte)random.Next(8, 20);
-            byte ap = (byte)random.Next(8, 20);
+            int hp = random.Next(8, 20);
+            int ac = random.Next(8, 20);
+            int ap = random.Next(8, 20);
 
             Player player = new Player(name, hp, ac, ap);
             Console.WriteLine($"Starting Armor class:{player.ArmorClass}");
